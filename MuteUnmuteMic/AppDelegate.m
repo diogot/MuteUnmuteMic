@@ -1,10 +1,13 @@
 #import "AppDelegate.h"
+#import "RHStatusItemView.h"
 
 #define MAX_VOLUME 75
 
 @interface AppDelegate ()
 {
-    NSStatusItem *menuItem;
+    __weak IBOutlet NSMenu *mainMenu;
+    
+    RHStatusItemView *micView;
     BOOL muted;
 }
 
@@ -15,11 +18,22 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     muted = NO;
     
-    menuItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    NSStatusItem *menuItem = [[NSStatusBar systemStatusBar] statusItemWithLength:24];
     menuItem.highlightMode = YES;
-    menuItem.image = [NSImage imageNamed:@"mic_on"];
-    [menuItem setTarget:self];
-    [menuItem setAction:@selector(toggleMute)];
+    
+    micView = [[RHStatusItemView alloc] initWithStatusBarItem:menuItem];
+    micView.menu = mainMenu;
+    
+    NSImage *image = [NSImage imageNamed:@"mic_on"];
+    image.template = NO;
+    
+    micView.image = image;
+    micView.alternateImage = image;
+    micView.target = self;
+    micView.action = @selector(toggleMute);
+    micView.rightMenu = [self createQuitMenu];
+    
+    menuItem.view = micView;
 }
 
 - (void)toggleMute {
@@ -32,7 +46,24 @@
     [script executeAndReturnError:nil];
     
     NSString *imageName = muted ? @"mic_off" : @"mic_on";
-    menuItem.image = [NSImage imageNamed:imageName];
+    micView.image = [NSImage imageNamed:imageName];
+    micView.alternateImage = [NSImage imageNamed:imageName];
+}
+
+- (NSMenu *)createQuitMenu {
+    NSMenuItem *quitItem = [[NSMenuItem alloc] initWithTitle:@"Sair"
+                                                      action:@selector(killApp)
+                                               keyEquivalent:@""];
+    quitItem.target = self;
+    
+    NSMenu *quitMenu = [NSMenu new];
+    [quitMenu addItem:quitItem];
+    
+    return quitMenu;
+}
+
+- (void)killApp {
+    [NSApp terminate:nil];
 }
 
 @end

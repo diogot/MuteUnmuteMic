@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ECD74C4B1BBBA02F0081277E /* RHStatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD74C4A1BBBA02F0081277E /* RHStatusItemView.m */; settings = {ASSET_TAGS = (); }; };
 		ECF208BE1BAF2DE6000D3C2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF208BD1BAF2DE6000D3C2C /* AppDelegate.m */; };
 		ECF208C11BAF2DE6000D3C2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF208C01BAF2DE6000D3C2C /* main.m */; };
 		ECF208C31BAF2DE6000D3C2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF208C21BAF2DE6000D3C2C /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ECD74C491BBBA02F0081277E /* RHStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHStatusItemView.h; sourceTree = "<group>"; };
+		ECD74C4A1BBBA02F0081277E /* RHStatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHStatusItemView.m; sourceTree = "<group>"; };
 		ECF208B91BAF2DE6000D3C2C /* MuteUnmuteMic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuteUnmuteMic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF208BC1BAF2DE6000D3C2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ECF208BD1BAF2DE6000D3C2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +58,8 @@
 			children = (
 				ECF208BC1BAF2DE6000D3C2C /* AppDelegate.h */,
 				ECF208BD1BAF2DE6000D3C2C /* AppDelegate.m */,
+				ECD74C491BBBA02F0081277E /* RHStatusItemView.h */,
+				ECD74C4A1BBBA02F0081277E /* RHStatusItemView.m */,
 				ECF208C21BAF2DE6000D3C2C /* Assets.xcassets */,
 				ECF208C41BAF2DE6000D3C2C /* MainMenu.xib */,
 				ECF208C71BAF2DE6000D3C2C /* Info.plist */,
@@ -142,6 +147,7 @@
 			files = (
 				ECF208C11BAF2DE6000D3C2C /* main.m in Sources */,
 				ECF208BE1BAF2DE6000D3C2C /* AppDelegate.m in Sources */,
+				ECD74C4B1BBBA02F0081277E /* RHStatusItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
